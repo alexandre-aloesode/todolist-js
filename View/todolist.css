@@ -1,0 +1,269 @@
+nav {
+
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    align-items: center;
+    font-size: 120%;
+}
+
+    nav a {
+
+        text-decoration: none;
+        color: black;
+    }
+
+    #deco {
+
+        border: none;
+        background-color: white;
+        font-size: 90%;
+
+    }
+
+    #deco:hover {
+
+        cursor: grab;
+    }
+
+body {
+
+    margin:10%;
+    margin-top: 1%;
+}
+
+main {
+
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#main_functions {
+
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#display_task_board {
+
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px black;
+    border-radius: 5px;
+    position: absolute;
+    top: 5%;
+    left: 30%;
+    width: 400px;
+    height: 300px;
+    padding: 30px;
+}
+
+    #modify_title_form {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #modify_title_form input{
+
+        width: 100%;
+    }
+
+    #task_cross, #users_cross {
+        
+        color: red;
+        font-size: 200%;
+        position: absolute;
+        top: 1%;
+        left: 92%;
+        /* z-index: 2;  */
+    }
+
+    #users_cross {
+
+        left: 96%;
+    }
+
+#tasks_display {
+
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+    /* h1 {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    } */
+
+
+    #to_do_area {
+
+        width: 100%;
+    }
+
+    #to_do {
+
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    #to_do_area h2 {
+
+        width: 100%;
+        
+    }
+
+    #done_area h2 {
+
+        width: 100%;
+        
+    }
+
+#users_management {
+
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border: solid 1px red;
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    min-height: 300px;
+    padding: 30px;
+    border: solid 2px black;
+    border-radius: 5px;
+}
+
+    #invitations_list {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .invited_line {
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .auto_search_line:hover {
+
+        cursor: crosshair;
+    }
+
+    #add_invited_form {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+#list_form {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#done {
+
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+    #done_area h2 {
+
+        width: 100%;
+    }
+
+.task_box {
+
+    border: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;    
+    width: 250px;
+    height: 250px;
+    margin-right: 40px;
+    margin-bottom: 40px;
+    padding: 10px;
+    background-color: #fae9a4;
+    border-radius: 5px;
+}
+
+    .task_title {
+
+        width: 100%;
+        display: flex ;
+        justify-content: center;
+    }
+
+    .task_date {
+
+        width: 100%;
+        display: flex ;
+        justify-content: center;
+    }
+
+    .task_button {
+
+        margin-right: 20px;
+
+    }
+
+
+main button {
+
+    height: 40px;
+    font-size: 100%;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    border: solid 2px black;
+    /* width: 30%; */
+    margin-bottom: 30px;
+}
+
+main button:hover {
+
+    transform: scale(1.05);
+    transition-duration: 0.5s;
+    background-color: grey;
+}
+
+main input {
+
+    width: 80%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #6B4B3E;
+    outline-color: black;
+    background-color: white;
+    font-size: 100%;
+    margin-bottom: 10px;
+}
+
+main select {
+
+    height: 40px;
+    font-size: 100%;
+    border-radius: 5px;
+
+}

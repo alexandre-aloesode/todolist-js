@@ -1,0 +1,64 @@
+body {
+
+    margin:10%;
+    margin-top: 1%;
+}
+
+
+main {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#register_form {
+
+    display: none;
+}
+
+#connexion_form {
+
+    display: none;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    padding: 30px;
+    width: 30%;
+    font-size: 120%;
+    box-shadow: 5px 5px 5px 5px white;
+}
+
+    form input {
+        width: 80%;
+        height: 50px;
+        border-radius: 5px;
+        border: 1px solid #6B4B3E;
+        outline-color: purple;
+        background-color: white;
+        font-size: 100%;
+        margin-bottom: 40px;
+    }
+    
+    button {
+        height: 40px;
+        font-size: 100%;
+        border-radius: 5px;
+        background-color: purple;
+        color: white;
+        border: none;
+        width: 30%;
+        margin-bottom: 40px;
+    }
+
+    button:hover {
+        transform: scale(1.05);
+        transition-duration: 0.5s;
+    } 
