@@ -1,9 +1,8 @@
 <link rel="stylesheet" href="todolist.css">
 
 <?php 
-    require_once '../Model/User.php';
 
-    
+    require_once '../Model/User.php';
 
     session_start();
 
@@ -25,7 +24,7 @@
     <?php if(isset($_SESSION['user'])): ?>
 
 
-        <form method="POST">
+        <form method="POST" id ="deco_form">
             <button type="submit" name="deco" id="deco">Déconnexion</button>
         </form>
 

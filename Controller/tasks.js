@@ -118,8 +118,6 @@ function display_to_do_tasks(start_date, title, id_task, id_user) {
 
     end_task.setAttribute("class", "task_button");
 
-    end_task.setAttribute("name", "task_number");
-
     end_task.setAttribute("value", id_task);
 
     end_task.innerHTML = "Terminer";
@@ -133,7 +131,7 @@ function display_to_do_tasks(start_date, title, id_task, id_user) {
 
     const modif_task = document.createElement("button");
 
-    modif_task.setAttribute("name", id_task);
+    modif_task.setAttribute("class", "task_button");
 
     modif_task.innerHTML = "Modifier";
 
@@ -188,8 +186,6 @@ function display_done_tasks(start_date, end_date, title, id_task, id_user) {
 
     restore_task.setAttribute("class", "task_button");
 
-    restore_task.setAttribute("name", "task_number");
-
     restore_task.setAttribute("value", id_task);
 
     restore_task.innerHTML = "Restaurer";
@@ -202,8 +198,6 @@ function display_done_tasks(start_date, end_date, title, id_task, id_user) {
     const delete_task = document.createElement("button");
 
     delete_task.setAttribute("class", "task_button");
-
-    delete_task.setAttribute("name", "task_number");
 
     delete_task.setAttribute("value", id_task);
 

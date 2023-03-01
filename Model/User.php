@@ -82,6 +82,9 @@
         public function register(string $login, string $password) {
 
             $SQL = new PDO('mysql:host=localhost;dbname=todolist;charset=utf8', 'root','');
+
+            //$SQL = new PDO('mysql:host=localhost;dbname=alexandre-todolistjs;charset=utf8', 'Namrod','azertyAZERTY123!');
+
 //Pour la gestion des droits d'accès au planning d'autres utilisateurs j'ai besoin d'ajouter l'id de l'user créé en colone des invitations. Je dois donc récupérer la derniere id créée et lui ajouter 1 pour avoir ma valeur
             $request_last_id = "SELECT MAX(id) FROM utilisateurs";
 
@@ -111,6 +114,8 @@
         public function connect(string $login, string $password) {
             
             $SQL = new PDO('mysql:host=localhost;dbname=todolist;charset=utf8', 'root','');
+
+            //$SQL = new PDO('mysql:host=localhost;dbname=alexandre-todolistjs;charset=utf8', 'Namrod','azertyAZERTY123!');
 
             $request_fetch_user = "SELECT * FROM utilisateurs WHERE login = :login";
 
