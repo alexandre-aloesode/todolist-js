@@ -15,6 +15,9 @@ const users_button = document.querySelector("#users_button");
 users_button.addEventListener("click", show_users_window);
 
 const users_management = document.querySelector("#users_management");
+
+const invited_list = document.querySelector("#invited_list");
+
 const add_invited_button = document.querySelector("#add_invited_button");
 add_invited_button.addEventListener("click", add_invited)
 
@@ -164,6 +167,8 @@ function display_to_do_tasks(start_date, title, id_task, id_user) {
 
 function display_done_tasks(start_date, end_date, title, id_task, id_user) {
 
+    console.log(id_task)
+
     const task_done_title = document.createElement("h2");
 
     task_done_title.setAttribute("class", "task_title");
@@ -242,8 +247,8 @@ function end_event(task_number) {
 
         }).then((data) => {
 
-
-            display_done_tasks(data.date_debut, data.date_fin, data.title, data.id_task, data.id_user);
+            console.log(data)
+            display_done_tasks(data.date_debut, data.date_fin, data.title, data.id, data.id_user);
 
             const task_to_remove = document.querySelector(`#task${task_number}`);
 
@@ -509,13 +514,18 @@ function close_users_window() {
 
 
 
-function load_invited_list() {
+function load_invitations_list() {
+
+    const load_invitations_form = new FormData();
+
+    load_invitations_form.append("load_list", "load_list");
 
     fetch("../Controller/invitations.php", {
 
         method: "POST",
 
-        // body: add_invited_form
+        body: load_invitations_form
+
     })
 
         .then((response) => {
@@ -532,6 +542,7 @@ function load_invited_list() {
 
                 select_user.innerHTML = data[i][0].login;
                 select_user.value = data[i][0].id;
+                // select_user.style.backgroundColor = "rgba(0, 0, 0, 0)";
                 
                 boards_select.appendChild(select_user);
 
@@ -566,9 +577,15 @@ function display_invitations() {
 
     invitations_list.innerHTML= "";
 
+    const display_invitations_form = new FormData();
+
+    display_invitations_form.append("display_list", "display_list");
+
     fetch("../Controller/invitations.php", {
 
         method: "POST",
+
+        body: display_invitations_form
 
     })
 
@@ -600,8 +617,6 @@ function display_invited() {
 
     set_display_invited.append("launch_invited", "launch_invited");
 
-    const invited_list = document.querySelector("#invited_list");
-
     invited_list.innerHTML= "";
 
     fetch("../Controller/invited_users.php", {
@@ -623,7 +638,6 @@ function display_invited() {
             for(let y in data) {
 
                 const display_invited = document.createElement("p");
-                display_invited.setAttribute("class", "auto_search_line")
 
                 display_invited.innerHTML = data[y][0].login;
 
@@ -637,6 +651,8 @@ function display_invited() {
 
                 const invited_line = document.createElement("div");
                 invited_line.setAttribute("class", "invited_line");
+                invited_line.setAttribute("id", `invited_line${data[y][0].id}`);
+
 
                 invited_line.appendChild(display_invited);
                 invited_line.appendChild(invited_cross);
@@ -673,8 +689,10 @@ function add_invited(ev) {
             alert(data.message);
 
         })
-    
+
+            
     display_invited();
+      
 }
 
 
@@ -682,15 +700,15 @@ function add_invited(ev) {
 
 function delete_invited(invited_id) {
 
-    const launch_display_invited = new FormData();
+    const launch_delete_invited = new FormData();
 
-    launch_display_invited.append("delete_invited", invited_id);
+    launch_delete_invited.append("delete_invited", invited_id);
 
     fetch("../Controller/invited_users.php", {
 
         method: "POST",
 
-        body: launch_display_invited
+        body: launch_delete_invited
 
     })
 
@@ -702,10 +720,17 @@ function delete_invited(invited_id) {
 
         .then(data => {
             
-            if(data.success == true) alert(data.message);
+            if(data.success == true) {
+                
+                alert(data.message);
+                
+                const invited_to_delete = document.querySelector(`#invited_line${invited_id}`)
+                // console.log(invited_to_delete)
+                invited_list.removeChild(invited_to_delete);
+            
+            }
+            
         })
-
-
 
 }
 
@@ -732,6 +757,7 @@ function auto_search_name () {
             for(let x in data) {
 
                 let contain_name = document.createElement("p");
+                contain_name.setAttribute("class", "auto_search_line")
 
                 contain_name.innerHTML = data[x].login;
 
@@ -761,4 +787,4 @@ function refresh_board() {
 
 display_board();
 
-load_invited_list();
+load_invitations_list();

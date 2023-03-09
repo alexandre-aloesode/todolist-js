@@ -13,8 +13,6 @@
         header('Location: ../View/index.php');
     }
 
-    // var_dump($_SESSION['user']);
-
 ?>
 
 <nav>

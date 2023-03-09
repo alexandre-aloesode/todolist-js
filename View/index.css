@@ -1,11 +1,14 @@
-@import url('https://fonts.cdnfonts.com/css/blackboard');
+/* @import url('https://fonts.cdnfonts.com/css/blackboard'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:ital@1&display=swap');
+
 
 
 body {
 
     margin:10%;
     margin-top: 1%;
-    font-family: 'Blackboard', sans-serif;
+    font-family: 'Shantell Sans', cursive;
 }
 
 
@@ -29,19 +32,16 @@ nav {
 
     #deco {
 
-        border: none;
-        background-color: black;
+        background-color: rgba(0, 0, 0, 0);
         font-size: 90%;
-        font-family: 'Blackboard', sans-serif;
+        font-family: 'Shantell Sans', cursive;
         color: white;
-        
-
     }
+
 
     #deco:hover {
 
         cursor: grab;
-        /* border: solid 2px white; */
         transition-duration: 0.5s;
     }
 
@@ -53,27 +53,18 @@ main {
     align-items: center;
 }
 
-#register_form {
+
+
+#register_form, #connexion_form {
 
     display: none;
-}
-
-#connexion_form {
-
-    display: none;
-}
-
-
-form {
-
-    display: flex;
     flex-direction: column;
     align-items: center;
     border: none;
     border-radius: 10px;
     background-color: white;
     padding: 30px;
-    width: 30%;
+    width: 60%;
     font-size: 120%;
     box-shadow: 5px 5px 5px 5px white;
 }
@@ -91,11 +82,12 @@ form {
     }
     
     button {
+
         height: 40px;
         font-size: 100%;
         border-radius: 5px;
         background-color: purple;
-        color: white;
+        color: black;
         border: none;
         width: 30%;
         margin-bottom: 40px;
@@ -105,5 +97,11 @@ form {
         transform: scale(1.05);
         transition-duration: 0.5s;
     }
+
+
+#register_button, #connexion_button {
+
+    color: black;
+}
 
     

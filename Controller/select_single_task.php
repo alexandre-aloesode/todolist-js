@@ -6,7 +6,7 @@
     
         $SQL = new PDO('mysql:host=localhost;dbname=todolist;charset=utf8', 'root','');
 
-        //$SQL = new PDO('mysql:host=localhost;dbname=alexandre-todolistjs;charset=utf8', 'Namrod','azertyAZERTY123!');
+        //$SQL = new PDO('mysql:host=localhost;dbname=alexandre-aloesode_todolistjs;charset=utf8', 'Namrod','azertyAZERTY123!');
 
         $SQL->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 

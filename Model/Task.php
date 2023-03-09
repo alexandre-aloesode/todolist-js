@@ -26,7 +26,7 @@
 
             $SQL = new PDO('mysql:host=localhost;dbname=todolist;charset=utf8', 'root','');
 
-            //$SQL = new PDO('mysql:host=localhost;dbname=alexandre-todolistjs;charset=utf8', 'Namrod','azertyAZERTY123!');
+            //$SQL = new PDO('mysql:host=localhost;dbname=alexandre-aloesode_todolistjs;charset=utf8', 'Namrod','azertyAZERTY123!');
 
 
             $request_add_task = "INSERT INTO `taches`(`title`, `date_debut`, `id_utilisateur`, `finie`) VALUES (:title, NOW(), :id_utilisateur, :finie)";
